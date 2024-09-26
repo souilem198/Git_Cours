@@ -2,7 +2,7 @@
 int main()
 {
     int annee,mois,jours,heures,minutes,secondes,choix;
-    printf("veuillez entrer l annee :");
+    printf("veuillez entrer une annee :");
     scanf("%d",&annee);
     printf("1 convertir annee en mois\n");
     printf("2 convertir annee en jours\n");
