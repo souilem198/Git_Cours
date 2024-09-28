@@ -1,14 +1,17 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,s;
-    printf("veuillez entre un nombre :");
+     int n,i,f;
+    printf("entrer le nombre :");
     scanf("%d",&n);
-    s=1;
-    for(i=1;i<=n;i++){
-        s=s*i;
+    f =1;
+    if(n>=0){
+    for(i=1;i<=n;i++)
+            f =f*i;
+        printf("%d",f);
     }
-    printf("factorielle du nombre entrer :%d",s);
+    else
+        printf("entre un nombre positif");
 
 
 
