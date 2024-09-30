@@ -20,7 +20,6 @@ int main(){
     printf("la maximum est :%d",max);
 
 
-
     return 0;
 
 
