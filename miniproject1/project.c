@@ -1,5 +1,5 @@
 #include<stdio.h>
-int n,i,s,m,choix,max,min,x;
+int n,i,s,m,choix,max,min,x,y;
 int tab_nomb[5];
 int moyenne(){
     m = s/n;
@@ -10,28 +10,43 @@ int maximum(){
     for(i=1;i<5;i++){
         if(max < tab_nomb[i])
         max = tab_nomb[i];
-        return max;
     }
+    return max;
 }
-int note_superieur(){
+void note_superieur(){
     for(i=0;i<5;i++){
         if(tab_nomb[i]>m)
-        return tab_nomb[i];
+        printf("les notes superieure a la moyenne sont :%d\n",tab_nomb[i]);
     }
-
+}
+void valide(){
+    x = 0;
+    for(i=0;i<5;i++){
+        if(tab_nomb[i]>=12)
+        x = x+1;
+    }
+    printf("le nombres d etudiants ayont valide est :%d\n",x);
+}
+void rattrapage(){
+    y = 0;
+    for(i=0;i<5;i++){
+        if(tab_nomb[i]<12)
+        y = y+1;
+    }
+    printf("le nombres d etudiants en rattrapage est :%d\n",y);
 }
 int minimum(){
     min = tab_nomb[0];
-    for(i=1;i<5;i++){
+    for(i=1;i<n;i++){
         if(min>tab_nomb[i])
         min = tab_nomb[i];
-        return min;
     }
+      return min;
 }
 
 int main(){
     printf("les nombres etudiants sont :");
-    scanf("%d",&tab_nomb[5]);
+    scanf("%d",&n);
     for(i=0;i<n;i++){
         printf("entrer la notes d etudiant num %d :\t",i+1);
         scanf("%d",&tab_nomb[i]);
@@ -63,12 +78,18 @@ int main(){
         printf("note plus basse est :%d\n",min);
         break;
         case 4:
-        printf("les notes superieure a la moyenne :%d\n",tab_nomb[i]);
+        moyenne();
+        note_superieur();
         break;
+        case 5:
+        valide();
+        break;
+        case 6:
+        rattrapage();
+        break;
+        default : printf("au revoir !");
+        break;
+
     }
-    return 0;
+   return 0;
 }
-
-
-
-
